@@ -5,47 +5,60 @@
 >[!IMPORTANT]
 >To work offline, you need to:
 >
-> - install **Audit Everywhere** on your mobile device or laptop.
-> - get all your assigned activities on the mobile device or laptop when network connection is still available.
+> - [Install Audit Everywhere](#install-audit-everywhere) on your mobile device or laptop.
+> - Get all your assigned activities on the mobile device or laptop when network connection is still available.
+> - Sign In when connection is available
 >
->**Audit Everywhere** synchronizes data with **HOPEX Internal Audit** as soon as the network connection becomes available.
+> **Audit Everywhere** synchronizes data every minute with **HOPEX Internal Audit** as soon as the network connection becomes available.
 >
->After working offline, you need to complete your activities in **HOPEX Internal Audit** to complete activity workflows.
+> After working offline with **Audit Everywhere**, you need to complete your activities in **HOPEX Internal Audit** to complete activity workflows.
 >
 
 ![Application icon](images/Favicon.png)
 
-## Login
+## Sign In
 
-With Google Chrome (for instance), browse to the **Audit Everywhere** URL. The following login page opens.
-The first time you log in, Chrome offers you to install **Audit Everywhere** on your device.
+After the [installation of Audit Everywhere](#install-audit-everywhere), open Audit Everywhere application or, with Google Chrome (for instance), browse to the **Audit Everywhere** URL. The following login page opens.
 
-![login page on a tablet](images/login-tab.png)
-![login page](images/login.png)
+![login page on a tablet](images/login-tab.png)![login page](images/login.png)
 
-Enter your **Username** and **Password** just like in **HOPEX Internal Audit**.
-then tap  **Sign In**. The [**All Audits**](#all-audits) page opens.
+Enter your **Username** and **Password** (the same as when in **HOPEX Internal Audit**)
+then tap  **Sign In**. The [All Audits](all-audits) page opens.
+
+> Please note that you need to be connected to enter in the application.
 
 ## All Audits
 
 **Audit Everywhere** displays the list of audits in which you have some activities to perform.
-It shows the name of the audit, its timeframe and the number of completed activities among all existing activities.
-Tap one of the audits to view the [**Audit Details**](#audit-details).
+It shows the name of the audit, its time frame and the number of completed activities among all existing activities. On the top of the application **Offline** appears when the connection is to slow or disabled.
+Tap one of the audits to view the [Audit Details](#audit-details).
 
-![All audits](images/all-audits.png)
+![All audits](images/all-audits.png)![All audits](images/offline-all-audits.png)
+
+## Menu
+
+![menu](images/menu.png)![menu offline](images/offline-menu.png)
+
+Tap on the **menu icon** on the top right conner makes appear the menu pan. It shows information about the sign in user, application version and the connection status: Online or Offline.
+On this menu pan you can:
+
+- Return on the [All Audits](#all-audits) page from every page of the application.
+- **Sign Out** and return to the [Sign In](#sign-in) page.
 
 ## Audit Details
 
 **Audit Everywhere** displays a list of themes under the name of the audit. A theme is a grouping of activities. Activities that are not part of a theme are displayed under **No Theme**.
 
-Each **Theme** displays the number of incomplete activities. Completed activities are followed by a check mark.
-Tap an activity to display the [**Activity page**](#activity-page).
+Each **Theme** displays the number of incomplete activities. Completed activities are followed by a check mark. Tap an activity to display the [**Activity page**](#activity-page).
 
-![Audit Details](images/audit-details.png)
+![Audit Details](images/audit-details.png)![Audit Details offline](images/offline-audit-details.png)
 
 ## Activity page
 
-The activity page consists of two tabs under the name of the activity. It shows the [activity Details](#details-tab) and the list of [Findings](#findings-tab) of the activity.
+The activity page consists of two tabs under the name of the activity:
+
+- The [activity Details](#details-tab)
+- The list of the activity [Findings](#findings-tab).
 
 ![activity details](images/activity-details.png)![activity findings](images/activity-findings.png)
 
@@ -54,42 +67,44 @@ The activity page consists of two tabs under the name of the activity. It shows 
 The Details tab displays the activity start and end date. You can fill in the amount of time spent on the activity. It also displays the description of the activity.
 
 > [!IMPORTANT]
->The **Complete activity** button changes only the local status of the activity. This is the only information which is not synchronized with **HOPEX internal Audit**.
+>The **Complete activity** button changes only the local status of the activity. This is the only information which is not synchronized with **HOPEX internal Audit**. The auditor has to complete all its activities in **HOPEX Internal Audit**. The completed activities are not updatable in the application.
 >
->The auditor has to complete all its activities in **HOPEX Internal Audit**.
 
 ### Findings tab
 
 It displays the list of exiting findings with their name, part of their description and the number of associated recommendations. From this tab you can:
 
-- [add a new finding](#create-a-new-finding),
-- [edit an existing finding](#edit-finding),
-- [delete one or more findings.](#delete-finding)
+- [add a new finding](#creating-a-finding),
+- [edit an existing finding](#editing-a-finding),
+- [delete one or more findings.](#deleting-a-finding)
 
-### Creating a finding
+#### Creating a finding
 
 ![new findings](images/new-finding.png)
 
-In the Findings tab, enter the finding name then tap the **plus (+)** sign. The [**Finding page**](#finding-page) with the name entered appears.
+In the Findings tab, enter the finding name then tap the **plus (+)** sign. The [finding page](#finding-page) with the name entered appears.
 Alternatively, tap the **plus (+)** sign directly.
 
 #### Editing a finding
 
-Tap a finding to display the [**Finding**](#finding) page.
+Tap a finding to display the [finding page](#finding-page).
 
 #### Deleting a finding
 
 ![delete findings](images/delete-findings.png)
 
-Press and hold one or several findings on your mobile device, or select checkboxes on a laptop. Tap the **trash bin** to delete the selected finding and confirm.
+Press and hold one or several findings on your mobile device, or select checkboxes on a laptop.
+
+- Tap the **arrow** to cancel the action.
+- Tap the **trash bin** to delete the selected finding and confirm.
 
 ## Finding page
 
 The Finding page enables you to edit the finding details:
 
-- name (mandatory)
-- impact of the finding
-- description of the finding
+- Name (mandatory)
+- Impact of the finding (Very Low, Low, Medium, High,Very High)
+- Description of the finding
 
 ![finding](images/finding.png)
 
@@ -107,35 +122,121 @@ It displays the list of recommendations you can make on the finding, with their 
 
 Tap the **Save** button to store/synchronize your modifications.
 
-### Recommendations
+## Evidence
 
-#### Creating a recommendation
+### Creating evidence
+
+![new evidence](images/evidence-new.png)
+
+ and the autOn top of the list of attachments, tap the **Add evidence** button. its make appears according to your device the possibility to:
+
+- use the Camera of the device to take a photo.
+- use the Camcorder of the device to take a video.
+- use the Recorder of the device to capture an audio stream.
+- browse for any file of the device.
+
+![new evidence](images/evidence-action.png)
+
+To allow the use of Camera, Camcorder, Recorder and  browse for any file. Check the **APP Permission** of your browser in your device: Camera, Microphone, Storage.
+
+The evidence is uploaded when the arrow in the cloud become a check mark.
+
+### Viewing evidence
+
+Tap an evidence to download it. It works Online only.
+
+### Deleting evidence
+
+![delete evidence](images/evidence-delete.png)
+
+Press and hold one or several evidences on your mobile device, or select checkboxes on a laptop. The trash bin bar appears.
+
+- Tap the **arrow** to cancel the action.
+- Tap the **Trash bin** to delete the selected evidence.
+
+## Recommendations
+
+### Creating a recommendation
 
 ![new recommendation](images/new-recommendation.png)
 
-On top of the list of recommendations, enter the name of the new recommendation then tap the **plus (+)** sign, or directly tap the **plus (+)** sign. The recommendation popup [**recommendation popup**](#recommendation-popup) appears with the name entered.
+On top of the list of recommendations, enter the name of the new recommendation then tap the **plus (+)** sign, or directly tap the **plus (+)** sign. The recommendation popup [recommendation popup](#recommendation-popup) appears with the name entered.
 
-#### Editing a recommendation
+### Editing a recommendation
 
-Tap a recommendation to open the [**recommendation popup**](#recommendation-popup)
+Tap a recommendation to open the [recommendation popup](#recommendation-popup)
 
-#### Deleting recommendations
+### Deleting recommendations
 
-Press and hold one or several recommendations on your mobile device, or select checkboxes on a laptop. The trash bin bar appears. Tap the **Trash bin** to delete the selected recommendation.
+Press and hold one or several recommendations on your mobile device, or select checkboxes on a laptop. The trash bin bar appears.
+
+- Tap the **arrow** to cancel the action.
+- Tap the **Trash bin** to delete the selected recommendation.
 
 ### Recommendation popup
 
 The **recommendation popup** enables you to enter the name, which is mandatory, as well as the details of the recommendation.
 
 - Tap the **Save** button to store/synchronize your modifications and close the popup window.
-- Tap the **X** to close the popup window. This cancels all modifications
+- Tap the **X** at the top right angle to close the popup window. This cancels all modifications
 
 ![edit recommendation](images/recommendation-edit.png)
 
-### Evidence
+## Install Audit Everywhere
 
-#### Creating evidence
+[Installation compatibility chart](https://caniuse.com/#feat=serviceworkers)
 
-#### Viewing evidence
+### Safari on IOS
 
-#### Deleting evidence
+To put **Audit everywhere** shortcut on your Home screen, do the following:
+
+1. Browse to **Audit everywhere**  URL  in Safari
+1. Tap the **Share button** in Safari for Audit everywhere.
+1. Tap the icon labeled **Add to Home Screen**.
+1. Tap Add in the upper-right corner.
+1. Now name Audit everywhere so that it’s distinguishable from its native counterpart on the Home screen and in Search
+1. Tap Add in the upper-right corner.
+
+### Samsung Internet
+
+![install on android](images/install-samsung-internet.png)
+
+1. Browse to **Audit everywhere** URL in Samsung Internet
+1. Then :
+   - On the the address bar
+      - Tap on the **download sign** ![install on android](images/install-samsung.png)
+   - Or on the Samsung Internet menu
+     1. Tap on **+ Add page to**
+     1. Select **Apps Screen** on the popup window
+  
+1. Confirm your choice in the popup window by selecting **Install**
+
+### Chrome on Android
+
+![install on android](images/install-chrome-android.png)
+
+1. Browse to **Audit everywhere** URL in chrome.
+1. Then:
+
+   - Tap on the message
+     - **Add Audit Everywhere to to Home screen**![install on android](images/install-chrome.png)
+   - or select in chrome menu
+     - **Add to to Home screen** in chrome menu
+1. Confirm your choice in the popup window by selecting **Add**.  
+
+## Reset cache
+
+### Reset cache in chrome
+
+1. Select **Settings** in chrome menu.
+1. Under Select **Site Settings** under advanced section.
+1. Select Storage
+1. Select the storage corresponding to audit everywhere web site.
+1. Tap on **Clear & Reset**
+
+### Reset cache in Samsung Internet
+
+1. Select **Settings** in the menu.
+1. Tap on **Sites and Download**
+1. Tap on **Manage website data**
+1. Tap on **Delete**

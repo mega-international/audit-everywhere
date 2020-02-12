@@ -24,22 +24,33 @@ To configure the application in the `public/config` copy the `config.json.exampl
 - **repositoryId** is the absolute identifier of the repository you can get it form the megaenv.ini and convert it.
 - **profileId** is the absolute identifier of the profile the default value is the absolute identifier of the profile **Auditor**.
 - Set the **client_secret** according HOPEX configuration.
+- **validatedStatus** define the status where an activity is read only.
+if you change the list, do not forget to add **localyvalidated** status given by the application when tap on complete activity.
+- The **connectivity url** can be set to `https://ROOT_API/audit-everywhere/img/px.gif` to avoid cross-site warning
 
  ```json
 {
   "ROOT_API": "",                                      "Comment of ROOT_API":     " root url of HOPEX no leading HOPEX no leading /",
   "API_timeout": 6000,                                 "Comment of API_timeout":  " Limit of time in ms, where the application switches to offline mode 0 will ignore",
+  "ASYNC_timeout": 6000,                               "Comment of API_timeout":  " Limit of time in ms, where the API waits to give a response or a job ID",
   "environmentId": "",                                 "Comment of environmentId":" Absolute identifier of the environment see megasite.ini and convert it",
   "repositoryId": "",                                  "Comment of repositoryId": " Absolute identifier of the repository  see megaenv.ini and convert it",
   "profileId": "tWisjijuFnES",                         "Comment of profileId":    " Absolute identifier of the Auditor profile",
-  "grant_type": "password",                            "Comment of grant_type":   " Authentication parameter",
-  "scope": "hopex offline_access openid read write",   "Comment of scope":        " Authentication scope",
   "client_id": "hopexapi",                             "Comment of client_id":    " Authentication Client Id",
   "client_secret": "secret",                           "Comment of client_secret":" Authentication Client secret Set the secret of hopexapi check HOPEX configuration",
   "title": "Audit Everywhere",
-  "validatedStatus": "tobevalidated|validated|closed", "Comment of validatedStatus":" Values to be separated by the '|' character",
-  "unvalidatedStatus": "",                             "Comment of unvalidatedStatus":" Values to be separated by the '|' character",
+  "validatedStatus": "tobevalidated|validated|closed|localyvalidated", "Comment of validatedStatus":" Values to be separated by the '|' character, localyvalidated manage the local completion",
+  "unvalidatedStatus": "created|tobereviewed",         "Comment of unvalidatedStatus":" Values to be separated by the '|' character",
+  "documentCategory": "g4InWZSRGDBB",                  "Comment of documentCategory":  "IdAbs of document Category: audit evidences",
+  "documentPattern": "KoQoM0jRGLZH",                   "Comment of DocumentPattern":   "IdAbs of document Pattern: audit evidences",
   "impacts": [ "VeryLow","Low", "Medium", "High", "VeryHigh" ],
+  "cascadeOnDelete": true,                             "Comment of cascadeOnDelete": "Either delete operation should work in cascade or not",
+  "connectivity": {
+    "url": "https://www.google.com/images/phd/px.gif", "Comment of url":         "URL to ping in order to determine the network connectivity",
+    "timeToCount": "3",                                "Comment of timeToCount": "The number of time we repeat the operation",
+    "threshold": "3000",                               "Comment of threshold":   "The threshold at which we decide to be offline",
+    "interval": "20000",                               "Comment of interval":    "The time between each repetition"
+  },
   "toast": {
     "actionTextColor": "black",
     "errorColor": "#EE2665",
