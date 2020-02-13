@@ -3,6 +3,7 @@
 **Audit Everywhere** is the mobile component of **HOPEX Internal Audit**. It enables auditors to work without a network connection to HOPEX.
 
 >[!IMPORTANT]
+>
 >To work offline, you need to:
 >
 > - [Install Audit Everywhere](#install-audit-everywhere) on your mobile device or laptop.
