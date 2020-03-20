@@ -9,7 +9,8 @@ To work offline, you need to install **Audit Everywhere** on your mobile device 
 - [Configure build and deploy](documentation/configure-build-deploy.md)
 - [Audit Everywhere quick start guide](documentation/readme.md)
 
-![Login](documentation/images/login-tab.png)
+Watch a demo on Youtube: [![Login](documentation/images/login-tab.png)](https://www.youtube.com/watch?v=O8AilpckiRI)
+
 ![Login](documentation/images/login.png)
 ![All audits](documentation/images/all-audits.png)
 ![Menu](documentation/images/menu.png)
