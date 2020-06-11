@@ -1,0 +1,7 @@
+@tailwind base;
+
+@tailwind components;
+
+.ease-linear{transition-timing-function:linear}.ease-in{transition-timing-function:cubic-bezier(.4,0,1,1)}.ease-out{transition-timing-function:cubic-bezier(0,0,.2,1)}.ease-in-out{transition-timing-function:cubic-bezier(.4,0,.2,1)}.transition-fastest{transition-duration:75ms}.transition-faster{transition-duration:.1s}.transition-fast{transition-duration:.15s}.transition-medium{transition-duration:.2s}.transition-slow{transition-duration:.3s}.transition-slower{transition-duration:.5s}.transition-slowest{transition-duration:.7s}.transition-all{transition-property:all}.transition-opacity{transition-property:opacity}.transition-transform{transition-property:transform}.translate-x-full{transform:translateX(-100%)}.translate-x-0{transform:translateX(0)}.translate-x-6{transform:translateX(1.5rem)}
+
+@tailwind utilities;

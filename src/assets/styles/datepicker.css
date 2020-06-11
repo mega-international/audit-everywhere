@@ -1,0 +1,113 @@
+/* input */
+.ho-datepicker {
+  min-width: 3rem;
+  width: 100%;
+}
+.ho-datepicker input {
+  width: 100%;
+  background-color: transparent;
+  @apply text-darkblue;
+  border: none;
+  border-bottom: 2px solid var(--ma-input-bar, #EBEFF2);
+  padding: 0 0 0 0.5rem;
+  font-size: 0.9rem;
+}
+.ho-datepicker input:focus {
+  outline: none;
+}
+input:disabled, .ho-datepicker input:disabled::placeholder {
+  @apply text-gray-400 !important;
+}
+
+.ho-datepicker .vdp-datepicker__calendar .cell.selected {
+  @apply bg-badge font-medium text-green;
+}
+
+/* Bottom bar */
+.bar {
+  position: relative;
+  display: block;
+  width: 100%;
+}
+.bar:before, .bar:after {
+  @apply bg-green;
+
+  content: '';
+  height: 2px;
+  width: 0;
+  bottom: 0;
+  position: absolute;
+  transition: 0.2s ease all;
+  -moz-transition: 0.2s ease all;
+  -webkit-transition: 0.2s ease all;
+}
+.bar:before {
+  left: 50%;
+}
+.bar:after {
+  right: 50%;
+}
+
+/* Label */
+.ho-datepicker label {
+  @apply text-base text-darkblue font-normal;
+  font-weight: normal;
+  position: absolute;
+  pointer-events: none;
+  top: -1.45rem;
+  will-change: transform;
+
+  transition: 0.2s ease all; 
+  -moz-transition: 0.2s ease all; 
+  -webkit-transition: 0.2s ease all;
+  white-space: nowrap;
+}
+
+input:disabled ~ .material label { @apply text-gray-400 !important; }
+.ho-datepicker.mandatory ~ .material label::after {
+  display: inline-block;
+  margin-left: 0.1rem;
+  line-height: 1rem;
+  font-size: 1rem;
+  @apply text-darkgrey;
+  content: '*';
+  vertical-align: middle;
+}
+
+input:focus ~ .material label,
+input:valid ~ .material label,
+.ho-datepicker .active  {
+  font-size: 0.75rem;
+  @apply text-green;
+  transform: translateY(-20px);
+}
+input:-webkit-autofill ~ .material label {
+  font-size: 0.75rem;
+  @apply text-green;
+  transform: translateY(-20px);
+}
+input:invalid ~ .material label {
+  font-size: 0.75rem;
+  transform: translateY(-20px);
+}
+
+/* active state */
+.ho-datepicker input:focus ~ .material .bar:before, .ho-datepicker input:focus ~ .material .bar:after,
+.ho-datepicker input:focus ~ .bar:before, .ho-datepicker input:focus ~ .bar:after {
+  width: 50%;
+}
+
+/* active state */
+.ho-datepicker input:focus ~ .highlight {
+  -webkit-animation:inputHighlighter 0.3s ease;
+  -moz-animation:inputHighlighter 0.3s ease;
+  animation:inputHighlighter 0.3s ease;
+}
+
+/* Error state */
+/* .error : input type text, input:invalid : input type email */
+.error ~ .bar:before, .error ~ .bar:after,
+input:invalid ~ .bar:before, input:invalid ~ .bar:after {
+  width: 50%;
+  background: var(--app-red-color);
+}

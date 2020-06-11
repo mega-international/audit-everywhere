@@ -25,5 +25,6 @@ yarn-error.log*
 *.sw?
 .env
 config.json
+version.json
 
 *.pdf
