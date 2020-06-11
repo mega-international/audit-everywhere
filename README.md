@@ -1,11 +1,3 @@
----
-Area: Audit everywhere
-PageTitle : Audit everywhere
-Author: JF Trianda
-date: 20/02/2020
-description: Audit Everywhere is the mobile component of HOPEX Internal Audit. It enables auditors to work without a network connection to HOPEX.
----
-
 # Audit Everywhere
 
 ![Audit Everywhere App icon](docs/images/Favicon.png)

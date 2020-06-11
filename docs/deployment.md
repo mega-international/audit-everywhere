@@ -1,10 +1,3 @@
----
-Area: Audit everywhere
-PageTitle : Deploy and configure of Audit everywhere from a Zip file
-Author: JF Trianda
-date: 11/06/2020
----
-
 # Deploy and configure of **Audit everywhere** from a Zip file
 
 ## Pre Requisite

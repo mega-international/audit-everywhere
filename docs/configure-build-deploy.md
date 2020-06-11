@@ -1,10 +1,3 @@
----
-Area: Audit everywhere
-PageTitle : Configure, build and deploy Audit everywhere
-Author: JF Trianda
-date: 20/02/2020
----
-
 # Configure, build and deploy **Audit everywhere**
 
 ## Pre requisite
