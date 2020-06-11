@@ -2,7 +2,7 @@
 Area: Audit everywhere
 PageTitle : Deploy and configure of Audit everywhere from a Zip file
 Author: JF Trianda
-date: 09/06/2020
+date: 11/06/2020
 ---
 
 # Deploy and configure of **Audit everywhere** from a Zip file
@@ -76,7 +76,7 @@ Create the application configuration file **config.json**. Copy `C:\inetpub\wwwr
 
 ## Configuration for HOPEX V3
 
-As a reminder Audit everywhere is compatible since HOPEX V3CP3 HotFix 3. For HOPEX V3 versions there is more recommendation:
+As a reminder Audit everywhere is compatible since HOPEX V3CP4. For HOPEX V3 versions there is more recommendation:
 
 - Have a separate backend to set up MTA (Multi Thread Apartment) for HOPEX backend
 - Set up MTA in the megasite.ini on this specific machine
