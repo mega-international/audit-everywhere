@@ -4,7 +4,7 @@
 
 to deploy and use Audit everywhere
 
-- HOPEX V3 CP3 minimum
+- HOPEX V3 CP4 minimum
 - Install **HOPEX Graphql**. You can download it from [HOPEX store](https://community.mega.com/t5/HOPEX-Store/GraphQL-REST-API/td-p/21381).
 - **HTTPS** is mandatory since **Audit everywhere** is a [PWA](https://developers.google.com/web/ilt/pwa/introduction-to-progressive-web-app-architectures).
 - Browser minimum version [please check](https://caniuse.com/#feat=serviceworkers)

@@ -16,7 +16,7 @@ date: 20/02/2020
 
 ### Pre requisite to deploy and use Audit everywhere
 
-- HOPEX V3 CP3 minimum
+- HOPEX V3 CP4 minimum
 - You need to install **HOPEX Graphql** module you can download it from [HOPEX store](https://community.mega.com/t5/HOPEX-Store/GraphQL-REST-API/td-p/21381).
 - **HTTPS** protocol is mandatory since **Audit everywhere** is a [PWA](https://developers.google.com/web/ilt/pwa/introduction-to-progressive-web-app-architectures).
 - [IIS URL Rewrite Extension](https://www.iis.net/downloads/microsoft/url-rewrite), download and install (with MS Web Platform Installer).

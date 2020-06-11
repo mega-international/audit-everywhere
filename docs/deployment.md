@@ -11,7 +11,7 @@ date: 11/06/2020
 
 To deploy and use Audit everywhere you need:
 
-- HOPEX V3 CP3 minimum
+- HOPEX V3 CP4 minimum
 - Install **HOPEX Graphql**. You can download it from [HOPEX store](https://community.mega.com/t5/HOPEX-Store/GraphQL-REST-API/td-p/21381).
 - **HTTPS** is mandatory since **Audit everywhere** is a [PWA](https://developers.google.com/web/ilt/pwa/introduction-to-progressive-web-app-architectures).
 - [URL Rewrite](https://www.iis.net/downloads/microsoft/url-rewrite)  Extension for IIS
