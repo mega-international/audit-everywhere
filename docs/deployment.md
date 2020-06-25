@@ -26,7 +26,7 @@ Create the application configuration file **config.json**. Copy `C:\inetpub\wwwr
 - Set **ROOT_API** to the root url of HOPEX no leading HOPEX no leading **/**. For instance `https://myHopexRootURL.mycompany.com` will be the **ROOT_API** if  `https://myHopexRootURL.mycompany.com/hopex` is the URL of HOPEX.
 - The **environmentId** is the absolute identifier of the production environment you can get it form the megasite.ini and convert it.
 - The **repositoryId** is the absolute identifier of the repository you can get it form the megaenv.ini and convert it.
-- The **profileId** is the absolute identifier of the profile the default value is the absolute identifier of the profile **Auditor**.
+- The **profileId** is the absolute identifier of a profile. The default value **tWisjijuFnES** is the absolute identifier of the profile **Auditor**.
 - Set the **client_secret** according HOPEX configuration.
 - The **validatedStatus** defines the list of statuses of a read only activity, each status being separated by the character '|'. If you change the list, do not forget to add **localyvalidated** status given by the application when tap on complete activity.
 - The **unvalidatedStatus** defines the list of the statuses of an editable activity, each status being separated by the character '|'.
@@ -71,8 +71,21 @@ Create the application configuration file **config.json**. Copy `C:\inetpub\wwwr
 
 As a reminder Audit everywhere is compatible since HOPEX V3CP4. For HOPEX V3 versions there is more recommendation:
 
-- Have a separate backend to set up MTA (Multi Thread Apartment) for HOPEX backend
-- Set up MTA in the megasite.ini on this specific machine
+- Set up a separate server for GraphQL
+- The HOPEX environment must be defined as a shared folder  `\\mySrv\myShare\myEnvironment`
+
+### GraphQL Server Set Up
+
+A separate backend has to be set up. It will be named GraphQLServer further in this article. It will have as url: `https://GraphQLserver.mycompagny.com`. It contains :
+
+- SSP
+- UAS
+- HOPEX Back-end
+- HOPEX GraphQL
+  
+### GraphQL Server Config
+
+ Set up MTA in the megasite.ini on this specific machine
 
 ```ini
 [System]
@@ -80,7 +93,46 @@ SPROCoThreadModel=2
 
 [Debug]
 LogSPROCoThreadModel=1
+LogCoThreadModel=1
+
+[Environment Shortcuts]
+yyyyyyyyyyyy=\\mySrv\myShare\myEnvironment
 ```
+
+### GraphQL Server CORS Configuration
+
+Specific cross-site scripting configuration for GraphQLServer server
+
+- For UAS Web.config
+
+```xml
+ <customHeaders>
+    <add name="Access-Control-Allow-Origin" value="https://myHopexRootURL.mycompagny.com" />
+    <add name="Access-Control-Allow-Headers" value="Content-Type, Authorization, HopexContext" />
+    <add name="Access-Control-Allow-Methods" value="GET,POST,PUT,DELETE,OPTIONS" />
+    <add name="Access-Control-Allow-Credentials" value="true" />
+</customHeaders>
+```
+
+- For HOPEXGraphQL Web.config
+
+```xml
+<customHeaders>
+    <add name="Access-Control-Allow-Origin" value="hhttps://myHopexRootURL.mycompagny.com" />
+    <add name="Access-Control-Allow-Headers" value="Content-Type, Authorization, X-Hopex-Context, x-hopex-sessiontoken, x-hopex-task, x-hopex-wait" />
+    <add name="Access-Control-Allow-Methods" value="GET,POST,PUT,DELETE,OPTIONS" />
+    <add name="Access-Control-Allow-Credentials" value="true" />
+</customHeaders>
+```
+
+### Install Audit-everywhere
+
+Install Audit-everywhere on the regular HOPEX front end server (url: https://myHopexRootURL.mycompagny.com)
+
+Here is values for configuration file config.json.
+- **ROOT_API** has to be set to  `https://GraphQLServer.mycompagny.com`
+- **environmentId** has to be set to `yyyyyyyyyyyy`
+- **connectivity url** has to be set to `https://myHopexRootURL.mycompany.com/audit-everywhere/img/px.gif`
 
 ---
 

@@ -32,13 +32,13 @@ export default {
     ...mapState({ audit: state => state.audit.audit }),
     activities() {
       if (!this.audit || !this.audit.auditActivity || !this.audit.auditTheme) return [];
-      const themed = this.audit.auditTheme.filter(theme => theme.auditActivity_ActivitywithTheme.length);
+      const themed = this.audit.auditTheme.filter(theme => theme.auditActivity_ActivityWithTheme.length);
       const unthemed = this.audit.auditActivity.filter(activity => !activity.auditTheme_ActivityTheme.length);
       if (unthemed.length) {
         const unthemedGroup = {
           id: Date.now(),
           name: this.$t('text.unthemed'),
-          auditActivity_ActivitywithTheme: unthemed
+          auditActivity_ActivityWithTheme: unthemed
         };
         return [ ...themed, unthemedGroup ];
       }

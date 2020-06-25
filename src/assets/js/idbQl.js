@@ -7,7 +7,7 @@ const tableNames = {
   auditActivity: 'activity',
   finding_ActivityFinding: 'finding',
   recommendation: 'recommendation',
-  businessDocument_ReferredtoDocument: 'businessDocument_ReferredtoDocument'
+  businessDocument_ReferredToDocument: 'businessDocument_ReferredToDocument'
 };
 
 export { tableNames };

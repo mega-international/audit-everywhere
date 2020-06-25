@@ -22,7 +22,7 @@ export async function getActivity(id) {
             name
             findingImpact
             detailedDescription
-            businessDocument_ReferredtoDocument {
+            businessDocument_ReferredToDocument {
               id
               externalId
               name
@@ -55,7 +55,7 @@ export async function getActivity(id) {
 
       // Finding
       finding_ActivityFinding.map(async finding => {
-        const { recommendation, businessDocument_ReferredtoDocument, ...findingData } = finding;
+        const { recommendation, businessDocument_ReferredToDocument, ...findingData } = finding;
         if (await isLocalChange(findingData.id, findingData.externalId,'finding')) return;
         await idbItemPassThrough({ ...findingData, parentId: activityData.id, synced: 'true', toDelete: 'false' }, 'finding');
 
@@ -67,7 +67,7 @@ export async function getActivity(id) {
         });
 
         // Attachment
-        businessDocument_ReferredtoDocument.map(async attachment => {
+        businessDocument_ReferredToDocument.map(async attachment => {
           if (await isLocalChange(attachment.id, attachment.externalId, 'attachment')) return;
           // If we do have an external ID, parent ID should be an external ID
           await idbItemPassThrough({ ...attachment, parentId: findingData.externalId || findingData.id, synced: 'true', toDelete: 'false', uploaded: 'true' }, 'attachment');

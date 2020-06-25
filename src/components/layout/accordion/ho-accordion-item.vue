@@ -1,5 +1,5 @@
 <template>
-  <section v-if="item.auditActivity_ActivitywithTheme"
+  <section v-if="item.auditActivity_ActivityWithTheme"
     class="ho-accordion-item mt-5" :class="item.opened ? 'opened' : ''">
     <header class="py-6 px-3 flex justify-between items-center cursor-pointer bg-white rounded-lg shadow outline-none hover:bg-lightgrey focus:bg-lightgrey" @click="$emit('accordion:open', item)">
       <h1 class="flex-1 text-sm font-semibold truncate">{{ item.name }}</h1>
@@ -10,7 +10,7 @@
     </header>
     <transition name="fade">
       <div v-show="item.opened">
-        <ho-activity  class="mt-2" v-for="activity of item.auditActivity_ActivitywithTheme" :key="activity.id" v-show="item.opened" :activity="activity"></ho-activity>
+        <ho-activity  class="mt-2" v-for="activity of item.auditActivity_ActivityWithTheme" :key="activity.id" v-show="item.opened" :activity="activity"></ho-activity>
       </div>
     </transition>
     <ma-iconset iconset="accordion">
@@ -42,7 +42,7 @@ export default {
   },
   async mounted() {
     const idb = await getDB();
-    for (let activity of this.item.auditActivity_ActivitywithTheme) {
+    for (let activity of this.item.auditActivity_ActivityWithTheme) {
       const localActivity = await idb.getFromIndex('activity', 'id', activity.id);
       if (localActivity) this.localActivities.push(localActivity);
     }

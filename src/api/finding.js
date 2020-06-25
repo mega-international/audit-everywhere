@@ -16,7 +16,7 @@ export async function getFinding({ findingId, activityId, external }) {
           name
           findingImpact
           detailedDescription
-          businessDocument_ReferredtoDocument {
+          businessDocument_ReferredToDocument {
             id
             externalId
             name
@@ -37,7 +37,7 @@ export async function getFinding({ findingId, activityId, external }) {
     .then(async ({ data }) => {
       const finding = data.data.finding[0];
       if (finding) {
-        const { recommendation, businessDocument_ReferredtoDocument, ...findingData } = finding;
+        const { recommendation, businessDocument_ReferredToDocument, ...findingData } = finding;
         if (!isToCreate(finding.id) && !await isLocalChange(findingData.id, findingData.externalId, 'finding')) {
           idbItemPassThrough({ ...findingData, parentId: activityId, synced: 'true', toDelete: 'false' }, 'finding');
         }
@@ -48,8 +48,8 @@ export async function getFinding({ findingId, activityId, external }) {
             await idbItemPassThrough({ ...recommendationData, parentId: findingData.externalId || findingData.id, synced: 'true', toDelete: 'false' }, 'recommendation');
           }
         }
-        if (!isToCreate(finding.id) && businessDocument_ReferredtoDocument) {
-          for (let attachment of businessDocument_ReferredtoDocument) {
+        if (!isToCreate(finding.id) && businessDocument_ReferredToDocument) {
+          for (let attachment of businessDocument_ReferredToDocument) {
             if (await isLocalChange(attachment.id, attachment.externalId, 'attachment')) continue;
             await idbItemPassThrough({ ...attachment, parentId: findingData.externalId || findingData.id, synced: 'true', toDelete: 'false', uploaded: 'true' }, 'attachment');
           }

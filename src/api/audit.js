@@ -6,7 +6,7 @@ export async function initialLoad() {
   const user = store.getters.getUser;
   return query({
     query: `query {
-      audit(filter: {missionStatus_in: [InProgress, Published ] auditorinAudit_PersonSystem_some: { id: "${user}" } }) {
+      audit(filter: {missionStatus_in: [InProgress, Published ] auditorInAudit_PersonSystem_some: { id: "${user}" } }) {
         id
         name
         comment
@@ -15,7 +15,7 @@ export async function initialLoad() {
         auditTheme {
           id
           name
-          auditActivity_ActivitywithTheme(filter: { activityOwner_PersonSystem_some: { id: "${user}" }}) {
+          auditActivity_ActivityWithTheme(filter: { activityOwner_PersonSystem_some: { id: "${user}" }}) {
             id
             name
             effectiveWorkload:activityEffectiveWorkloadHours
@@ -45,7 +45,7 @@ export async function initialLoad() {
             name
             findingImpact
             detailedDescription
-            businessDocument_ReferredtoDocument {
+            businessDocument_ReferredToDocument {
               id
               name
               creatorName
@@ -82,7 +82,7 @@ export async function initialLoad() {
         // Finding
         if (!finding_ActivityFinding) continue;
         for (let finding of finding_ActivityFinding) {
-          const { recommendation, businessDocument_ReferredtoDocument, ...findingData } = finding;
+          const { recommendation, businessDocument_ReferredToDocument, ...findingData } = finding;
           if (await isLocalChange(findingData.id, findingData.externalId, 'finding')) continue;
           await idbItemPassThrough({ ...findingData, parentId: activityData.id, synced: 'true', toDelete: 'false' }, 'finding');
 
@@ -92,8 +92,8 @@ export async function initialLoad() {
               await idbItemPassThrough({ ...recommendationData, parentId: findingData.id, synced: 'true', toDelete: 'false' }, 'recommendation');
             }
           }
-          if (businessDocument_ReferredtoDocument) {
-            for (let attachment of businessDocument_ReferredtoDocument) {
+          if (businessDocument_ReferredToDocument) {
+            for (let attachment of businessDocument_ReferredToDocument) {
               if (await isLocalChange(attachment.id, attachment.externalId, 'attachment')) continue;
               await idbItemPassThrough({ ...attachment, parentId: findingData.id, synced: 'true', toDelete: 'false', uploaded: 'true' }, 'attachment');
             }
@@ -183,7 +183,7 @@ export function getAudit(id) {
           auditTheme {
             id
             name
-            auditActivity_ActivitywithTheme(filter: { activityOwner_PersonSystem_some: { id: "${user}" }}) {
+            auditActivity_ActivityWithTheme(filter: { activityOwner_PersonSystem_some: { id: "${user}" }}) {
               id
               name
               effectiveWorkload:activityEffectiveWorkloadHours
@@ -224,7 +224,7 @@ export function getAudit(id) {
         }
       }
       for (let theme of auditTheme) {
-        for (let activity of theme.auditActivity_ActivitywithTheme) {
+        for (let activity of theme.auditActivity_ActivityWithTheme) {
           if (await isLocalChange(activity.id, null, 'activity')) {
             // await idbItemPassThrough({ id: activity.id }, 'activity', false);
           } else {

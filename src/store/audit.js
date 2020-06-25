@@ -117,7 +117,7 @@ export default {
           const attachmentLinkToPastId = finding.externalId ? await idb.getAllFromIndex('attachment', 'parentId', finding.externalId) : [];
           const attachmentLinkToNewId = await idb.getAllFromIndex('attachment', 'parentId', finding.id);
           const attachment = [ ...attachmentLinkToPastId, ...attachmentLinkToNewId ];
-          finding.businessDocument_ReferredtoDocument = attachment.filter(attachment => attachment.toDelete !== 'true');
+          finding.businessDocument_ReferredToDocument = attachment.filter(attachment => attachment.toDelete !== 'true');
         }
         commit('getActivity', data);
       }
@@ -143,7 +143,7 @@ export default {
         const attachmentLinkToPastId = data.externalId ? await idb.getAllFromIndex('attachment', 'parentId', data.externalId) : [];
         const attachmentLinkToNewId = await idb.getAllFromIndex('attachment', 'parentId', data.id);
         const attachment = [ ...attachmentLinkToPastId, ...attachmentLinkToNewId ];
-        data.businessDocument_ReferredtoDocument = attachment.filter(attachment => attachment.toDelete !== 'true');
+        data.businessDocument_ReferredToDocument = attachment.filter(attachment => attachment.toDelete !== 'true');
 
         data.auditActivity = await idb.getFromIndex('activity', 'id', params.activityId);
         commit('getFinding', data);

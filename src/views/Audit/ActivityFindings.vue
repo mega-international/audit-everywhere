@@ -673,8 +673,8 @@ export default {
         this.tempRecommendation =  this.finding && this.finding.recommendation ?
           this.finding.recommendation.map(reco => Object.assign({}, reco, { key: Date.now(), selected: false })) :
           [];
-        this.attachments = this.finding && this.finding.businessDocument_ReferredtoDocument ?
-          this.finding.businessDocument_ReferredtoDocument.map(attachment => Object.assign({}, attachment, { key: Date.now(), selected: false, file: attachment.file || {} })) :
+        this.attachments = this.finding && this.finding.businessDocument_ReferredToDocument ?
+          this.finding.businessDocument_ReferredToDocument.map(attachment => Object.assign({}, attachment, { key: Date.now(), selected: false, file: attachment.file || {} })) :
           [];
       }
     }

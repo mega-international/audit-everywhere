@@ -208,7 +208,7 @@
                     class="px-4 py-1 flex justify-center items-center text-xs badge text-white bg-green font-semibold rounded-full"
                   >{{ finding.recommendation.length }} {{ $tc('text.recommendationLabel', finding.recommendation.length) }}</div>
                   <ma-icon
-                    v-if="finding.businessDocument_ReferredtoDocument.length > 0"
+                    v-if="finding.businessDocument_ReferredToDocument.length > 0"
                     class="-mr-2"
                     icon="document"
                     iconset="calendarSet"
