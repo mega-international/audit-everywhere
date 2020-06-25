@@ -91,7 +91,7 @@ export function getUserInfo(userId) {
 export function revokeToken() {
   if (!store.getters.getToken) return false;
 
-  const formData = new FormData();
+  const formData = new URLSearchParams();
   formData.append('client_id', window.config.client_id);
   formData.append('client_secret', window.config.client_secret);
   formData.append('token', store.getters.getToken);
