@@ -24,7 +24,7 @@ export function createRecommendation(recommendations) {
   return query({
     query: `mutation {
       ${newRecommendation.map(recommendation => `
-        reco_${recommendation.id}:createUpdateRecommendation(id:"${recommendation.externalId}" idType:EXTERNAL recommendation: {
+        reco_${recommendation.externalId}:createUpdateRecommendation(id:"${recommendation.externalId}" idType:EXTERNAL recommendation: {
           name: "${recommendation.name}"
           details: "${recommendation.details}"
           recommendationPriority: ${recommendation.recommendationPriority}
@@ -121,7 +121,7 @@ export function editRecommendation(recommendations) {
   return query({
     query: `mutation {
       ${recommendationToUpdate.map(recommendation => `
-        reco_${recommendation.id}:createUpdateRecommendation(id: "${recommendation.hasExternalId ? recommendation.externalId : recommendation.id}"
+        reco_${recommendation.externalId}:createUpdateRecommendation(id: "${recommendation.hasExternalId ? recommendation.externalId : recommendation.id}"
           idType:${recommendation.hasExternalId ? 'EXTERNAL' : 'INTERNAL'} recommendation: {
           externalId: "${recommendation.externalId}"
           name:"${recommendation.name}"
