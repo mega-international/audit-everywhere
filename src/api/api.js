@@ -367,5 +367,6 @@ export async function handleOfflineFallback(error) {
  * Create a uuid
  */
 export function createId() {
+  const nanoid = customAlphabet('0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz', 20) ;
   return nanoid(20);
 }
