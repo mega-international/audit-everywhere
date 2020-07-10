@@ -134,7 +134,7 @@ export async function createFinding(findings) {
   return query({
     query: `mutation {
       ${newFindings.map(finding => `
-        finding_${finding.externalId}:createUpdateFinding(id:"${finding.externalId}" idType:EXTERNAL finding: {
+        finding_${finding.externalId}:createUpdateFinding(id:"${finding.externalId}" idType:EXTERNAL creationMode:BUSINESS finding: {
           name: "${finding.name}"
           findingImpact: ${finding.findingImpact}
           findingType: Weakness
@@ -267,7 +267,7 @@ export async function editFinding(findings) {
     query: `mutation {
       ${editedFindings.map(finding => `
         finding_${finding.externalId}:createUpdateFinding(id: "${finding.hasExternalId ? finding.externalId : finding.id}"
-          idType:${finding.hasExternalId ? 'EXTERNAL' : 'INTERNAL'} finding: {
+          idType:${finding.hasExternalId ? 'EXTERNAL' : 'INTERNAL'} creationMode:BUSINESS finding: {
           externalId: "${finding.externalId}"
           name: "${finding.name}"
           findingImpact: ${finding.findingImpact}

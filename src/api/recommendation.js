@@ -24,7 +24,7 @@ export function createRecommendation(recommendations) {
   return query({
     query: `mutation {
       ${newRecommendation.map(recommendation => `
-        reco_${recommendation.externalId}:createUpdateRecommendation(id:"${recommendation.externalId}" idType:EXTERNAL recommendation: {
+        reco_${recommendation.externalId}:createUpdateRecommendation(id:"${recommendation.externalId}" idType:EXTERNAL creationMode:BUSINESS recommendation: {
           name: "${recommendation.name}"
           details: "${recommendation.details}"
           recommendationPriority: ${recommendation.recommendationPriority}
@@ -121,17 +121,19 @@ export function editRecommendation(recommendations) {
   return query({
     query: `mutation {
       ${recommendationToUpdate.map(recommendation => `
-        reco_${recommendation.externalId}:createUpdateRecommendation(id: "${recommendation.hasExternalId ? recommendation.externalId : recommendation.id}"
-          idType:${recommendation.hasExternalId ? 'EXTERNAL' : 'INTERNAL'} recommendation: {
-          externalId: "${recommendation.externalId}"
-          name:"${recommendation.name}"
-          details:"${recommendation.details}"
-          recommendationPriority: ${recommendation.recommendationPriority}
-          finding:{
-            action: ADD
-            list:[{ id: "${recommendation.parentId}" idType:${recommendation.parentId.length < 20 ? 'INTERNAL' : 'EXTERNAL'} }]
+        reco_${recommendation.externalId}:createUpdateRecommendation( id: "${recommendation.hasExternalId ? recommendation.externalId : recommendation.id}" idType:${recommendation.hasExternalId ? 'EXTERNAL' : 'INTERNAL'} 
+          creationMode:BUSINESS recommendation: {
+            externalId: "${recommendation.externalId}"
+            name:"${recommendation.name}"
+            details:"${recommendation.details}"
+            recommendationPriority: ${recommendation.recommendationPriority}
+            finding:{
+              action: ADD
+              list:[{ id: "${recommendation.parentId}" idType:${recommendation.parentId.length < 20 ? 'INTERNAL' : 'EXTERNAL'} }]
+            }
           }
-        }) {
+        )
+        {
           id
           externalId
           name

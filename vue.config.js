@@ -7,6 +7,8 @@ module.exports = {
       globIgnores: [
         '**/config.json'
       ],
+      navigateFallback: 'index.html',
+      cacheId: 'audit-everywhere',
       exclude: [ /\.config$/, /\.json$/, /\.json.example$/, /service-worker\.js$/, /\.map$/ ],
       clientsClaim: true,
       skipWaiting: true,
