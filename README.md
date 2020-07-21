@@ -27,11 +27,11 @@ Using Audit Everywhere it is possible to:
 ![Activity details](docs/images/activity-details-tab.png)
 
 ## Installation procedure
-- [Install and configure from **app-idcard.zip**](docs/deployment.md)
+- [Install and configure from **Audit-everywhere.zip**](docs/deployment.md)
 - [Configure build and deploy](docs/configure-build-deploy.md)
 
 ## Documentation
-- [Application ID Card quick start guide](docs/readme.md)
+- [Audit Everywhere Card quick start guide](docs/readme.md)
 
 ## Licence
 - [Licence](LICENSE)
