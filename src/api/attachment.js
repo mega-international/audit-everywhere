@@ -25,7 +25,7 @@ export async function createDocument(attachments) {
   return query({
     query: `mutation {
       ${newAttachments.map(attachment => `
-        attachment_${attachment.externalId}:createUpdateBusinessDocument(id:"${attachment.externalId}" idType:EXTERNAL creationMode:BUSINESS businessDocument: {
+        attachment_${attachment.externalId}:createUpdateBusinessDocument(id:"${attachment.externalId}" idType:EXTERNAL businessDocument: {
           externalId: "${attachment.externalId}"
           name: "${attachment.file.name}"
           finding_Object: {

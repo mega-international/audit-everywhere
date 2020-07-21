@@ -114,64 +114,6 @@ export async function initialLoad() {
   .catch(handleError);
 }
 
-export async function getAudits() {
-  const user = store.getters.getUser;
-  if(store.getters.isOnline){
-    return query({
-      query: `query {
-        audit(filter: { missionStatus_in: [ InProgress, Published ] }) {
-          id
-          name
-          comment
-          missionPlannedBeginDate
-          missionPlannedEndDate
-          auditActivity(filter: { activityOwner_PersonSystem_some: { id: "${user}" }}) {
-            id
-            name
-            effectiveWorkload:activityEffectiveWorkloadHours
-            estimatedWorkloadHours
-            beginDate
-            endDate:activityEndDate
-            detailedDescription:comment
-            activityStatus
-          }
-        }
-      }`
-    })
-    .then(ensureSuccess)
-    .then(async ({ data }) => {
-      // Audit
-      const audits = data.data.audit;
-      for (let audit of audits) {
-        const { auditActivity, ...auditData } = audit;
-
-        if (await isLocalChange(auditData.id, null, 'audit')) continue;
-        idbItemPassThrough({ ...auditData, synced: 'true', toDelete: 'false' }, 'audit');
-        // Activity
-        for (let activity of auditActivity) {
-          const { finding_ActivityFinding, ...activityData } = activity;
-          if (await isLocalChange(activityData.id, null, 'activity')) continue;
-          idbItemPassThrough({ ...activityData, parentId: auditData.id, synced: 'true', toDelete: 'false' }, 'activity');
-        }
-        const idb = await getDB();
-        return await idb.getAllFromIndex('audit', 'id');
-      }
-    })
-    .catch(async error => {
-      if (await handleOfflineFallback(error)) {
-        const idb = await getDB();
-        return await idb.getAllFromIndex('audit', 'id');
-      }
-      Promise.reject(error);
-    })
-    .catch(handleError);
-  }
-  else{
-    const idb = await getDB();
-    return await idb.getAllFromIndex('audit', 'id');    
-  }  
-}
-
 export function getAudit(id) {
   const user = store.getters.getUser; 
   if(store.getters.isOnline){

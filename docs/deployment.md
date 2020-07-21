@@ -74,6 +74,21 @@ As a reminder Audit everywhere is compatible since HOPEX V3CP4. For HOPEX V3 ver
 - Set up a separate server for GraphQL
 - The HOPEX environment must be defined as a shared folder  `\\mySrv\myShare\myEnvironment`
 
+### External ID Permission
+
+For HOPEX versions earlier than v4, a manual step is required to edit the user rights with respect to a field used by the API: externalID.
+The edit consists in assigning full rights to all user profiles on this attribute. To do so, you must login into HOPEX via the HOPEX Administrator profile:
+
+1. Select "Permissions – Object UI Access"
+1. Under "Access Rights", select the profile **`<HOPEX Default>`**
+1. Under "MetaModel", select **`<All>`**
+1. Under "MetaClass" select the button "Abstract MetaClasses" and then the object "Generic Object"
+1. On the list on the right-hand side which appears, find the object "External Identifier", double click on the column "Permission" and write "RU".
+1. Logout and Save all changes
+
+![external-id-permission](images/external-id-permission.png)
+
+
 ### GraphQL Server Set Up
 
 A separate backend has to be set up. It will be named GraphQLServer further in this article. It will have as url: `https://GraphQLserver.mycompagny.com`. It contains :

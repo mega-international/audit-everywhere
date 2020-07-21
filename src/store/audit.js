@@ -8,7 +8,7 @@ import { createDB, get, set, remove } from '@/assets/js/idbHelpers.js';
 import { idbListPassThrough, idbItemPassThrough } from '@/api/api.js';
 import { getDB } from '@/assets/js/idbQl.js';
 //  Audit
-import { initialLoad, getAudits, getAudit, getAsyncJobResponse } from '@/api/audit.js';
+import { initialLoad, getAudit, getAsyncJobResponse } from '@/api/audit.js';
 import { getFinding, createFinding, editFinding, deleteFinding } from '@/api/finding.js';
 import { createRecommendation, editRecommendation, deleteRecommendation } from '@/api/recommendation.js';
 import { createDocument, createDocumentFile, deleteAttachment, downloadFile } from '@/api/attachment.js';
@@ -82,7 +82,7 @@ export default {
     },
     async getAudits({ commit }, params) {
       const idb = await getDB();
-      const data = await getAudits(params);
+      const data = await initialLoad();
       if (data !== false) {
         for (let audit of data) {
           const activities = await idb.getAllFromIndex('activity', 'parentId', audit.id);
