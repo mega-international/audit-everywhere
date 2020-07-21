@@ -31,7 +31,7 @@ Using Audit Everywhere it is possible to:
 - [Configure build and deploy](docs/configure-build-deploy.md)
 
 ## Documentation
-- [Audit Everywhere Card quick start guide](docs/readme.md)
+- [Audit Everywhere quick start guide](docs/readme.md)
 
 ## Licence
 - [Licence](LICENSE)
