@@ -91,7 +91,7 @@ The edit consists in assigning full rights to all user profiles on this attribut
 
 ### GraphQL Server Set Up
 
-A separate backend has to be set up. It will be named GraphQLServer further in this article. It will have as url: `https://GraphQLserver.mycompagny.com`. It contains :
+A separate backend has to be set up. It will be named GraphQLServer further in this article. It will have as url: `https://GraphQLserver.mycompany.com`. It contains :
 
 - SSP
 - UAS
