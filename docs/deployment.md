@@ -122,7 +122,7 @@ Specific cross-site scripting configuration for GraphQLServer server
 
 ```xml
  <customHeaders>
-    <add name="Access-Control-Allow-Origin" value="https://myHopexRootURL.mycompagny.com" />
+    <add name="Access-Control-Allow-Origin" value="https://myHopexRootURL.mycompany.com" />
     <add name="Access-Control-Allow-Headers" value="Content-Type, Authorization, HopexContext" />
     <add name="Access-Control-Allow-Methods" value="GET,POST,PUT,DELETE,OPTIONS" />
     <add name="Access-Control-Allow-Credentials" value="true" />
@@ -133,7 +133,7 @@ Specific cross-site scripting configuration for GraphQLServer server
 
 ```xml
 <customHeaders>
-    <add name="Access-Control-Allow-Origin" value="hhttps://myHopexRootURL.mycompagny.com" />
+    <add name="Access-Control-Allow-Origin" value="hhttps://myHopexRootURL.mycompany.com" />
     <add name="Access-Control-Allow-Headers" value="Content-Type, Authorization, X-Hopex-Context, x-hopex-sessiontoken, x-hopex-task, x-hopex-wait" />
     <add name="Access-Control-Allow-Methods" value="GET,POST,PUT,DELETE,OPTIONS" />
     <add name="Access-Control-Allow-Credentials" value="true" />
@@ -142,10 +142,10 @@ Specific cross-site scripting configuration for GraphQLServer server
 
 ### Install Audit-everywhere
 
-Install Audit-everywhere on the regular HOPEX front end server (url: https://myHopexRootURL.mycompagny.com)
+Install Audit-everywhere on the regular HOPEX front end server (url: https://myHopexRootURL.mycompany.com)
 
 Here is values for configuration file config.json.
-- **ROOT_API** has to be set to  `https://GraphQLServer.mycompagny.com`
+- **ROOT_API** has to be set to  `https://GraphQLServer.mycompagy.com`
 - **environmentId** has to be set to `yyyyyyyyyyyy`
 - **connectivity url** has to be set to `https://myHopexRootURL.mycompany.com/audit-everywhere/img/px.gif`
 
