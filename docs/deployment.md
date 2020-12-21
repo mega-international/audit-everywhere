@@ -1,12 +1,12 @@
-# Deploy and configure of **Audit everywhere** from a Zip file
+# Deploy and configure of **Audit Everywhere** from a Zip file
 
 ## Pre Requisite
 
-To deploy and use Audit everywhere you need:
+To deploy and use Audit Everywhere you need:
 
 - HOPEX V3 CP4 minimum
 - Install **HOPEX Graphql**. You can download it from [HOPEX store](https://community.mega.com/t5/HOPEX-Store/GraphQL-REST-API/td-p/21381).
-- **HTTPS** is mandatory since **Audit everywhere** is a [PWA](https://developers.google.com/web/ilt/pwa/introduction-to-progressive-web-app-architectures).
+- **HTTPS** is mandatory since **Audit Everywhere** is a [PWA](https://developers.google.com/web/ilt/pwa/introduction-to-progressive-web-app-architectures).
 - [URL Rewrite](https://www.iis.net/downloads/microsoft/url-rewrite)  Extension for IIS
 - Browser minimum version [please check](https://caniuse.com/#feat=serviceworkers)
 
@@ -91,7 +91,7 @@ The edit consists in assigning full rights to all user profiles on this attribut
 
 ### GraphQL Server Set Up
 
-A separate backend has to be set up. It will be named GraphQLServer further in this article. It will have as url: `https://GraphQLserver.mycompany.com`. It contains :
+A separate backend has to be set up. It will be named GraphQLServer further in this article. It will have as url: `https://GraphQLserver.mycompany.com`. It contains:
 
 - SSP
 - UAS
@@ -100,7 +100,7 @@ A separate backend has to be set up. It will be named GraphQLServer further in t
   
 ### GraphQL Server Config
 
- Set up MTA in the megasite.ini on this specific machine
+ Set up MTA in the megasite.ini on this specific machine.
 
 ```ini
 [System]
@@ -142,9 +142,9 @@ Specific cross-site scripting configuration for GraphQLServer server
 
 ### Install Audit-everywhere
 
-Install Audit-everywhere on the regular HOPEX front end server (url: https://myHopexRootURL.mycompany.com)
+Install Audit-everywhere on the regular HOPEX front end server (url: https://myHopexRootURL.mycompany.com).
 
-Here is values for configuration file config.json.
+Here are the values to be used for the configuration file config.json:
 - **ROOT_API** has to be set to  `https://GraphQLServer.mycompagy.com`
 - **environmentId** has to be set to `yyyyyyyyyyyy`
 - **connectivity url** has to be set to `https://myHopexRootURL.mycompany.com/audit-everywhere/img/px.gif`
