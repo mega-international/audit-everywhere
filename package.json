@@ -10,7 +10,7 @@
   },
   "dependencies": {
     "@snackbar/core": "^1.7.0",
-    "axios": "^0.19.2",
+    "axios": "^0.21.1",
     "core-js": "^2.6.11",
     "idb": "^4.0.5",
     "nanoid": "^3.1.4",
