@@ -21,7 +21,7 @@
 
 ## Sign In
 
-After the [installation of Audit Everywhere](#install-audit-everywhere), open **Audit Everywhere** App or, with Google Chrome (for instance), browse to the **Audit Everywhere** URL. The following login page opens.
+After the [installation of Audit Everywhere](#install-audit-everywhere), open **Audit Everywhere** App or, with Google Chrome (for instance), browse to the **Audit Everywhere** URL (https://your-HAS-url/audit-everywhere). The following login page opens.
 
 ![login page on a tablet](images/login-tab.png)![login page](images/login.png)
 
@@ -218,12 +218,13 @@ The **recommendation popup** enables you to enter/modify the name, which is mand
 ## Install Audit Everywhere
 
 [Installation compatibility chart](https://caniuse.com/#feat=serviceworkers)
+The application will be accessible from the following link: https://your-HAS-url/audit-everywhere
 
 ### Safari on IOS
 
 To put **Audit everywhere** shortcut on your Home screen, do the following:
 
-1. Browse to **Audit everywhere**  URL  in Safari
+1. Browse to **Audit everywhere**  URL  in Safari 
 1. Tap the **Share button** in Safari for Audit everywhere.
 1. Tap the icon labeled **Add to Home Screen**.
 1. Tap Add in the upper-right corner.
